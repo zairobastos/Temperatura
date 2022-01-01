@@ -20,7 +20,11 @@ const URL = `http://api.weatherapi.com/v1/forecast.json?key=ed600e62357c49db8b52
             const json = await data.json();
             console.log(json);
 
-            moment.locale('pt-br');
+            moment.updateLocale('pt-br',{
+                weekdaysShort : ['dom.','seg.','ter.','qua.','qui.','sex.','sáb.'],
+                weekdays:['domingo','segunda-feira','terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira','sábado']
+            })
+            
             const datas = moment().format('dddd, H');
 
             const dados = {
