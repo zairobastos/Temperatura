@@ -1,0 +1,40 @@
+.pesquisar {
+  width: 50%;
+  margin: 5% 25% 2.5rem 25%;
+  display: flex;
+  flex-flow: row wrap;
+  border: 1px solid transparent;
+  box-shadow: 0 1px 3px rgb(23 23 23 / 24%);
+  height: 2.75rem;
+  border-radius: 50px;
+  transition: all 0.3s;
+}
+
+.pesquisar:hover {
+  box-shadow: 0px 4px 12px rgb(23 23 23 / 90%);
+  border-color: rgba(223, 225, 229, 0);
+  transition: all 0.3s;
+}
+
+.pesquisar input {
+  border: none;
+  outline: none;
+  padding: 4.5px 20px;
+  height: 39px;
+  width: calc(100% - 100px);
+  height: 100%;
+  font-size: 12pt;
+  color: #e8eaed;
+  background-color: #303134;
+  border-radius: 50px 0px 0px 50px;
+}
+button {
+  background-color: #303134;
+  color: #757b80;
+  border: none;
+  font-size: 12pt;
+  padding: 4px 10px;
+  width: 100px;
+  height: 100%;
+  border-radius: 0px 50px 50px 0px;
+}
