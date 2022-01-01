@@ -2,7 +2,7 @@ const seacher = document.querySelector('#cidade');
 const submit = document.querySelector('.pesquisa');
 
 const city = submit.addEventListener('click', function (){
-    const URL = `https://api.weatherapi.com/v1/forecast.json?key=ed600e62357c49db8b5205211213012&q=${seacher.value}&days=3&aqi=no&alerts=no&lang=pt`;
+    const URL = `https://api.weatherapi.com/v1/forecast.json?key=ed600e62357c49db8b5205211213012&q=Sobral&days=3&aqi=no&alerts=no&lang=pt`;
 
     const img = document.querySelector('.img-clima');
     const temp = document.querySelector('h1');
