@@ -1,0 +1,66 @@
+main nav {
+  padding: 0.625rem 0;
+}
+main ul {
+  list-style: none;
+  display: flex;
+}
+main ul span {
+  border-left: 1px solid #3c4043;
+  margin: 0 0.688rem;
+  height: 1.25rem;
+}
+main ul .ativo {
+  padding-bottom: 0.25rem;
+  border-bottom: 3px solid #fdd663;
+}
+main ul li {
+  font-size: 0.875rem;
+  color: #bdc1c6;
+  line-height: 1.375rem;
+}
+section footer {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0.438rem;
+  padding-top: 0.438rem;
+}
+section footer .day1,
+section footer .day2,
+section footer .day3 {
+  width: 5rem;
+  height: 8rem;
+  text-align: center;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0;
+}
+section footer .day1 p,
+section footer .day2 p,
+section footer .day3 p {
+  color: #e8eaed;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 0.938rem;
+}
+section footer .ativo-day {
+  background-color: #303134;
+  border-radius: 10px;
+}
+
+section footer .day1 div,
+section footer .day2 div,
+section footer .day3 div {
+  font-size: 0.813rem;
+  font-weight: 400;
+  line-height: 0.938rem;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 4px;
+}
+.min {
+  color: #9aa0a6;
+}

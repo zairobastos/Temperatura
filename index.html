@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/global.css">
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/section.css">
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
     <header class="pesquisar">
@@ -42,31 +43,56 @@
         <main>
             <nav>
                 <ul>
-                    <li>Temperatura</li>
-                    <li>Chuva</li>
-                    <li>Umidade</li>
+                    <li class="temp ativo">Temperatura</li>
+                    <span></span>
+                    <li class="chuva">Chuva</li>
+                    <span></span>
+                    <li class="umidade">Umidade</li>
                 </ul>
             </nav>
-            <div>
+            <div id="chart">
 
             </div>
         </main>
         <footer>
-            <div>
+            <div class="day1 ativo-day">
+                <p class="day"></p>
+                <figure>
+                    <img alt="tempo" class="tempo1">
+                </figure>
+                <div>
+                    <p class="max"></p>
+                    <p class="min"></p>
+                </div>
             </div>
-            <div>
-
+            <div class="day2">
+                <p class="day"></p>
+                <figure>
+                    <img alt="tempo" class="tempo2">
+                </figure>
+                <div>
+                    <p class="max"></p>
+                    <p class="min"></p>
+                </div>
             </div>
-            <div>
-
+            <div class="day3">
+                <p class="day"></p>
+                <figure>
+                    <img alt="tempo" class="tempo3">
+                </figure>
+                <div>
+                    <p class="max"></p>
+                    <p class="min"></p>
+                </div>
             </div>
         </footer>
     </section>
     <footer>
 
     </footer>
-    
-    <script src="assets/js/api.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script src="assets/js/api.js"></script>
 </body>
 </html>
