@@ -126,6 +126,37 @@ tema.addEventListener('click',()=>{
             fahrenheit.classList.remove('dark-texto2');
         }
 
+        celsius.addEventListener('click',()=>{
+            if(celsius.classList.contains('ativo')){
+                celsius.classList.remove('dark-texto');
+                celsius.classList.remove('dark-texto2');
+                celsius.classList.add('ativo');
+    
+                fahrenheit.classList.remove('dark-texto2');
+                fahrenheit.classList.remove('dark-texto');
+                fahrenheit.classList.remove('ativo')
+            }else if (!fahrenheit.classList.contains('ativo')){
+                celsius.classList.add('ativo');
+                celsius.classList.remove('dark-texto');
+                celsius.classList.remove('dark-texto2');
+            }
+        })
+        fahrenheit.addEventListener('click',()=>{
+            if (fahrenheit.classList.contains('ativo')){
+                celsius.classList.remove('ativo');
+                celsius.classList.remove('dark-texto');
+                celsius.classList.remove('dark-texto2');
+    
+                fahrenheit.classList.remove('dark-texto');
+                fahrenheit.classList.remove('dark-texto2');
+                fahrenheit.classList.add('ativo');
+            }else if(!celsius.classList.contains('ativo')){
+                fahrenheit.classList.remove('dark-texto');
+                fahrenheit.classList.remove('dark-texto2');
+                fahrenheit.classList.add('ativo');
+            }
+        })
+
         chuva.classList.toggle('dark-texto2');
         umidade.classList.toggle('dark-texto2');
         vento.classList.toggle('dark-texto2');
