@@ -82,3 +82,8 @@
 .dark-texto2 {
   color: #70757a !important;
 }
+
+.background-light {
+  background-color: #f8f9fa !important;
+  color: #202124 !important;
+}
