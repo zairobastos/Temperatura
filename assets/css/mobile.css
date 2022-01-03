@@ -1,0 +1,40 @@
+@media screen and (max-width: 1100px) {
+  .pesquisar {
+    width: 80%;
+    margin: 5% 10% 2.5rem 10%;
+  }
+  section {
+    width: 80%;
+    margin: 0 10% 0.375rem 10%;
+  }
+  .dark-light {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 630px) {
+  .pesquisar {
+    width: 90%;
+    margin: 5% 5% 2.5rem 5%;
+  }
+  section {
+    width: 90%;
+    margin: 0 5% 0.375rem 5%;
+  }
+  .dark-light {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  section header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  section header .city {
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+}
