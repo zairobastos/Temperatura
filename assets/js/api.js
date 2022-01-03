@@ -1,6 +1,8 @@
 const seacher = document.querySelector('#cidade');
 const submit = document.querySelector('.pesquisa');
 
+const section  = document.querySelector('.desativado');
+
 const city = submit.addEventListener('click', function (){
     const URL = `https://api.weatherapi.com/v1/forecast.json?key=ed600e62357c49db8b5205211213012&q=${seacher.value}&days=3&aqi=no&alerts=no&lang=pt`;
 
@@ -32,7 +34,7 @@ const city = submit.addEventListener('click', function (){
     const mintemp1 = document.querySelector('.day1 .min');
     const mintemp2 = document.querySelector('.day2 .min');
     const mintemp3 = document.querySelector('.day3 .min');
-
+    
     const getWeather = async () => {
         try {
             const data = await fetch(URL);
@@ -47,6 +49,11 @@ const city = submit.addEventListener('click', function (){
             const datas = moment().format('dddd, H');
             const hora = moment().format('H:mm');
             const horaAtual = parseInt(hora);
+            if(section.classList.contains('desativado')){
+                section.classList.remove('desativado');
+            }else{
+
+            }
 
             const dados = {
                 image: json.forecast.forecastday[0].hour[horaAtual].condition.icon,
@@ -140,20 +147,36 @@ const city = submit.addEventListener('click', function (){
             tempImg1.src = dados.days.day1.icon;
             tempImg2.src = dados.days.day2.icon;
             tempImg3.src = dados.days.day3.icon;
-
+            
+            const dia = [];
+            const horas = [];
+            const hour = parseInt(moment().format('H'));
+            for(let i=0,c=0; i<8; i++){
+                let aux = hour+i;
+                if(aux<24){
+                    dia.push(c);
+                    horas.push(hour+i);
+                }else{
+                    dia.push(1);
+                    horas.push(c);
+                    c++;
+                }
+            }
+            console.log(horas);
+            console.log(dia);
             var options = {
                 series: [{
                     name: 'temperatura',
                     data: [
-                        json.forecast.forecastday[0].hour[0].temp_c, 
-                        json.forecast.forecastday[0].hour[1].temp_c, 
-                        json.forecast.forecastday[0].hour[2].temp_c, 
-                        json.forecast.forecastday[0].hour[3].temp_c, 
-                        json.forecast.forecastday[0].hour[4].temp_c, 
-                        json.forecast.forecastday[0].hour[5].temp_c, 
-                        json.forecast.forecastday[0].hour[6].temp_c, 
-                        json.forecast.forecastday[0].hour[7].temp_c
-                    ]
+                        json.forecast.forecastday[dia[0]].hour[horas[0]].temp_c,
+                        json.forecast.forecastday[dia[1]].hour[horas[1]].temp_c,
+                        json.forecast.forecastday[dia[2]].hour[horas[2]].temp_c,
+                        json.forecast.forecastday[dia[3]].hour[horas[3]].temp_c,
+                        json.forecast.forecastday[dia[4]].hour[horas[4]].temp_c,
+                        json.forecast.forecastday[dia[5]].hour[horas[5]].temp_c,
+                        json.forecast.forecastday[dia[6]].hour[horas[6]].temp_c,
+                        json.forecast.forecastday[dia[7]].hour[horas[7]].temp_c,
+                    ],
                 }],
                 chart: {
                     height: 150,
@@ -175,16 +198,15 @@ const city = submit.addEventListener('click', function (){
                     curve: 'smooth'
                 },
                 xaxis: {
-                    type: 'datetime',
                     categories: [
-                        `${json.forecast.forecastday[0].hour[0].time}`, 
-                        `${json.forecast.forecastday[0].hour[1].time}`, 
-                        `${json.forecast.forecastday[0].hour[2].time}`, 
-                        `${json.forecast.forecastday[0].hour[3].time}`, 
-                        `${json.forecast.forecastday[0].hour[4].time}`, 
-                        `${json.forecast.forecastday[0].hour[5].time}`, 
-                        `${json.forecast.forecastday[0].hour[6].time}`, 
-                        `${json.forecast.forecastday[0].hour[7].time}`,
+                        `${horas[0]}:00`, 
+                        `${horas[1]}:00`, 
+                        `${horas[2]}:00`,  
+                        `${horas[3]}:00`,  
+                        `${horas[4]}:00`, 
+                        `${horas[5]}:00`, 
+                        `${horas[6]}:00`, 
+                        `${horas[7]}:00`,
                     ],axisBorder: {
                         show: false,
                     }, axisTicks: {
@@ -213,16 +235,14 @@ const city = submit.addEventListener('click', function (){
                     show: false,
                 },
             };
-
-var chart = new ApexCharts(document.querySelector("#chart"), options);
-chart.render();
+            var chart = new ApexCharts(document.querySelector("#chart"), options);
+            chart.render();
 
             return dados;
         } catch (error) {
             console.log(error);
         }
     }
-
     getWeather();
     
 })

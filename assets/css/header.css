@@ -27,6 +27,7 @@
   color: #e8eaed;
   background-color: #303134;
   border-radius: 50px 0px 0px 50px;
+  transition: all 0.5s;
 }
 button {
   background-color: #303134;
@@ -37,4 +38,5 @@ button {
   width: 100px;
   height: 100%;
   border-radius: 0px 50px 50px 0px;
+  transition: all 0.5s;
 }

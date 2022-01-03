@@ -61,6 +61,6 @@ section footer .day3 div {
   flex-flow: row wrap;
   gap: 4px;
 }
-.min {
+footer div div .min {
   color: #9aa0a6;
 }

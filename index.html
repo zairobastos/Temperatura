@@ -10,13 +10,19 @@
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/section.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/dark-light.css">
 </head>
 <body>
+    <div class="dark-light">
+        <p class="tema-nome">Tema: Dark</span></p>
+        <input type="checkbox" name="toggle" id="toggle" class="toggle toggle-dark">
+        <label for="toggle" id="label-toggle"></label>
+    </div>
     <header class="pesquisar">
         <input type="text" name="cidade" id="cidade" placeholder="Digite o nome da cidade" autocomplete="off">
         <button type="submit" class="pesquisa">Pesquisar</button>
     </header>
-    <section>
+    <section class="desativado">
         <header>
             <div class="estatistica">
                 <figure>
@@ -94,5 +100,6 @@
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="https://momentjs.com/downloads/moment.js"></script>
     <script src="assets/js/api.js"></script>
+    <script src="assets/js/dark-light.js"></script>
 </body>
 </html>

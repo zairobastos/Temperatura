@@ -1,6 +1,9 @@
 section {
   margin: 0 25% 0.375rem 25%;
 }
+.desativado {
+  display: none;
+}
 
 section header {
   display: flex;
